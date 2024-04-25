@@ -1,8 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, BaseEntity } from "typeorm";
 import { ProductTypeEntity } from "./productType.entity";
 
 @Entity('products')
-export class ProductEntity{
+export class ProductEntity extends BaseEntity{
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
