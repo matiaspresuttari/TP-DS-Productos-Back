@@ -5,9 +5,9 @@ import { ProductTypeEntity } from "./productType.entity";
 export class ProductEntity extends BaseEntity{
     @PrimaryGeneratedColumn()
     id: number;
-    @Column()
+    @Column({nullable: false})
     name: string;
-    @Column()
+    @Column({nullable: false})
     price: number;
     @ManyToOne(()=>ProductTypeEntity,(productType)=>productType.products)
     productType: ProductTypeEntity;
