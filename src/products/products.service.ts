@@ -2,10 +2,12 @@ import { HttpException, Injectable, NotFoundException, HttpStatus } from '@nestj
 import { ProductEntity } from 'src/entities/product.entity';
 import { DeepPartial } from 'typeorm';
 import { products } from '../../DataBases/products.db'
+import { ProductTypeEntity } from 'src/entities/productType.entity';
 
 @Injectable()
 export class ProductsService {
     repository = ProductEntity;
+    
     async createProduct(product: DeepPartial<ProductEntity>): Promise<ProductEntity> {
         try {
             return await this.repository.save(product);
@@ -13,17 +15,28 @@ export class ProductsService {
             throw new HttpException('Create product error', 500)
         }
     }
-    async findProductById(id: string): Promise<ProductEntity> {
-        try {
-            const productFound = products.filter((product)=> product.id = id);
-            if (!productFound) {
-                throw new NotFoundException(`El producto con id ${id} no existe.`);
-            }
-            return productFound;
-        } catch (error) {
-            throw new HttpException('Error al buscar el producto', HttpStatus.INTERNAL_SERVER_ERROR);
+
+    /**
+     * Busca un producto por su ID.
+     * 
+     * @param id - El ID del producto a buscar.
+     * @returns Una promesa que se resuelve con el producto encontrado.
+     * @throws {NotFoundException} Si no se encuentra ningún producto con el ID especificado.
+     */
+    async findProductById(id: number): Promise<ProductEntity> {
+        const query = this.repository.createQueryBuilder('product')
+            .leftJoinAndSelect('product.productType', 'productType')
+            .where('product.id = :id', { id });
+    
+        console.log(query.getSql());
+        const product = await query.getOne();
+        if (!product) {
+            throw new NotFoundException(`Product with id ${id} not found`);
         }
+        return product;
     }
+
+
     // async updateProductById(){
     //     try {
             
@@ -34,7 +47,9 @@ export class ProductsService {
     // }
     async findProducts(){
         try {            
-            return await this.repository.find({ relations: ["ProductTypeEntity"] });
+            return await this.repository.find({
+                relations: ['productType']
+            });
         } catch (error) {
             throw new HttpException('Find all products error', 500)
         }   

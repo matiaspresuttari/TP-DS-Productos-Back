@@ -11,8 +11,8 @@ export class ProductsController {
         return await this.service.createProduct(product);
     }
     @Get(':id')
-    async findProductById(@Param('id') id: string): Promise<ProductEntity>{
-        return await this.service.findProductById(id);
+    async findProductById(@Param('id') id: number): Promise<ProductEntity>{
+      return await this.service.findProductById(id);
     }
     // @Put()
     // async updateProductById(): Promise<ProductEntity[]>{
