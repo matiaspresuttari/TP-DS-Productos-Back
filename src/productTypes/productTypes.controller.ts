@@ -1,4 +1,4 @@
-import { Controller, Body, Post, Get, Put } from '@nestjs/common';
+import { Controller, Body, Post, Get, Put ,Param} from '@nestjs/common';
 import { ProductTypeEntity } from 'src/entities/productType.entity';
 import { DeepPartial } from 'typeorm';
 import { ProductTypesService } from './productTypes.service';
@@ -11,15 +11,17 @@ export class ProductsController {
         return await this.service.createProductType(product);
     }
     @Get()
-    async findProductTypeById(): Promise<ProductTypeEntity[]>{
-        return await this.service.findProductTypeById();
+    async findProductTypes(): Promise<ProductTypeEntity[]>{
+        return await this.service.findProductTypes();
     }
-    @Put()
-    async updateProductTypeById(): Promise<ProductTypeEntity[]>{
-        return await this.service.updateProductTypeById();
+    
+    @Put('id')
+    async updateProductTypeById(@Param("id") id:number, @Body() update: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity>{
+        return await this.service.updateProductTypeById(id, update);
     }
-    //@Get()
-    //async findProducts(): Promise<ProductTypeEntity[]>{
-    //    return await this.service.findProductTypeById();
-    //}
+
+    @Get(":id")
+    async findProductTypesById(@Param("id") id:number): Promise<ProductTypeEntity>{
+        return await this.service.findProductTypesById(id);
+    }
 }

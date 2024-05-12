@@ -1,8 +1,6 @@
 import { HttpException, Injectable, NotFoundException, HttpStatus } from '@nestjs/common';
 import { ProductEntity } from 'src/entities/product.entity';
 import { DeepPartial } from 'typeorm';
-import { products } from '../../DataBases/products.db'
-import { ProductTypeEntity } from 'src/entities/productType.entity';
 
 @Injectable()
 export class ProductsService {
@@ -27,8 +25,6 @@ export class ProductsService {
         const query = this.repository.createQueryBuilder('product')
             .leftJoinAndSelect('product.productType', 'productType')
             .where('product.id = :id', { id });
-    
-        console.log(query.getSql());
         const product = await query.getOne();
         if (!product) {
             throw new NotFoundException(`Product with id ${id} not found`);
@@ -36,15 +32,33 @@ export class ProductsService {
         return product;
     }
 
+    async updateProductById(id: number, product: DeepPartial<ProductEntity>) : Promise<ProductEntity> {
+        const query = this.repository.createQueryBuilder('product')
+            .where('product.id = :id', { id });
+        const productActual = await query.getOne();
+        this.repository.merge(productActual, product);
+        if (!product) {
+            throw new NotFoundException(`Product with id ${id} not found`);
+        }
+        return await this.repository.save(productActual);
+    }
 
-    // async updateProductById(){
-    //     try {
-            
-    //         return await this.repository.update();
-    //     } catch (error) {
-    //         throw new HttpException('Find product error', 500)
-    //     }   
+    // async updateProductById(id: number, updateData: Partial<ProductEntity>): Promise<ProductEntity> {
+    //     // Buscar el producto existente
+    //     const product = await this.repository.findOneBy({ id });
+    //     if (!product) {
+    //         throw new NotFoundException(`Product with id ${id} not found`);
+    //     }
+
+    //     // Actualizar el producto con los nuevos datos
+    //     Object.assign(product, updateData);
+
+    //     // Guardar el producto actualizado
+    //     await this.repository.save(product);
+
+    //     return product;
     // }
+
     async findProducts(){
         try {            
             return await this.repository.find({

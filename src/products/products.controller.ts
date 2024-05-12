@@ -12,12 +12,12 @@ export class ProductsController {
     }
     @Get(':id')
     async findProductById(@Param('id') id: number): Promise<ProductEntity>{
-      return await this.service.findProductById(id);
+        return await this.service.findProductById(id);
     }
-    // @Put()
-    // async updateProductById(): Promise<ProductEntity[]>{
-    //     return await this.service.updateProductById();
-    // }
+    @Put(':id')
+    async updateProductById(@Param('id') id: number, @Body() updateData: Partial<ProductEntity>): Promise<ProductEntity>{
+        return await this.service.updateProductById(id, updateData);
+    }
     @Get()
     async findProducts(): Promise<ProductEntity[]>{
         return await this.service.findProducts();
