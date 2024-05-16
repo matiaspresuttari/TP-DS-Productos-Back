@@ -2,6 +2,7 @@ import { HttpException, Injectable, NotFoundException, HttpStatus } from '@nestj
 import { ProductEntity as ProductEntity } from 'src/entities/product.entity';
 import { DeepPartial } from 'typeorm';
 import { IProductEntity , IProductTypeEntity } from "../../DataBases/interfaces.db";
+import { productTypes } from 'DataBases/productTypes.db';
 
 @Injectable()
 export class ProductsService {
@@ -23,13 +24,7 @@ export class ProductsService {
      * @throws {NotFoundException} Si no se encuentra ningún producto con el ID especificado.
      */
     async findProductById(id: number): Promise<IProductEntity> {
-        const query = this.repository.createQueryBuilder('product')
-            .leftJoinAndSelect('product.productType', 'productType')
-            .where('product.id = :id', { id });
-        const product = await query.getOne();
-        if (!product) {
-            throw new NotFoundException(`Product with id ${id} not found`);
-        }
+        const product =await  this.repository.findOne({ where:{id}, relations:{productType:true}});
         return product;
     }
 
