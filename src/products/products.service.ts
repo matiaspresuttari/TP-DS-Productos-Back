@@ -1,12 +1,13 @@
 import { HttpException, Injectable, NotFoundException, HttpStatus } from '@nestjs/common';
-import { ProductEntity } from 'src/entities/product.entity';
+import { ProductEntity as ProductEntity } from 'src/entities/product.entity';
 import { DeepPartial } from 'typeorm';
+import { IProductEntity , IProductTypeEntity } from "../../DataBases/interfaces.db";
 
 @Injectable()
 export class ProductsService {
     repository = ProductEntity;
     
-    async createProduct(product: DeepPartial<ProductEntity>): Promise<ProductEntity> {
+    async createProduct(product: DeepPartial<ProductEntity>): Promise<IProductEntity> {
         try {
             return await this.repository.save(product);
         } catch (error) {
@@ -21,7 +22,7 @@ export class ProductsService {
      * @returns Una promesa que se resuelve con el producto encontrado.
      * @throws {NotFoundException} Si no se encuentra ningún producto con el ID especificado.
      */
-    async findProductById(id: number): Promise<ProductEntity> {
+    async findProductById(id: number): Promise<IProductEntity> {
         const query = this.repository.createQueryBuilder('product')
             .leftJoinAndSelect('product.productType', 'productType')
             .where('product.id = :id', { id });
@@ -32,7 +33,7 @@ export class ProductsService {
         return product;
     }
 
-    async updateProductById(id: number, product: DeepPartial<ProductEntity>) : Promise<ProductEntity> {
+    async updateProductById(id: number, product: DeepPartial<ProductEntity>) : Promise<IProductEntity> {
         const query = this.repository.createQueryBuilder('product')
             .where('product.id = :id', { id });
         const productActual = await query.getOne();

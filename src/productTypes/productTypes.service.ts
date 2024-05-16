@@ -7,10 +7,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 @Injectable()
 export class ProductTypesService {
     repository = ProductTypeEntity;
-    constructor(
-        @InjectRepository(ProductTypeEntity)
-        private readonly productTypeRepository: Repository<ProductTypeEntity>,
-    ) {}
     async createProductType(productType: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity> {
         try {
             return await this.repository.save(productType);
@@ -27,29 +23,12 @@ export class ProductTypesService {
         }   
     }
 
-    async updateProductTypeById(id: number, update: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity> {
-        try {
-            // Actualizar el tipo de producto en la base de datos
-            const updateResult = await this.productTypeRepository.update(id, update);
-            // Verificar si el tipo de producto fue actualizado exitosamente
-            if (updateResult.affected === 0) {
-                throw new NotFoundException(`Product type with id ${id} not found`);
-            }
-            // Obtener el tipo de producto actualizado
-            console.log(`Update result:`, updateResult);
-
-            const query = this.repository.createQueryBuilder('productType')
-            .where('productType.id = :id', { id });
-            const updatedProductType = await query.getOne();
-            console.log(`Update result:`, updatedProductType);
-
-            // Devolver el tipo de producto actualizado
-            return updatedProductType;
-        } catch (error) {
-            throw new BadRequestException(error.message);
-        }   
+    async updateProductTypeById(id: string, updateProduct: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity> {
+        const queryUpdate = await this.repository.findOneBy({id: parseInt(id),});  
+        await this.repository.update(id,updateProduct);
+        const updateProductType = this.repository.findOneBy({id: parseInt(id)});
+        return updateProductType;
     }
-
 
 
     async findProductTypesById(id: number): Promise<ProductTypeEntity> {

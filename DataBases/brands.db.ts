@@ -1,6 +1,6 @@
-import { BrandEntity } from "./interfaces.db";
+import { IBrandEntity } from "./interfaces.db";
 
-export const brands: BrandEntity[] = [
+export const brands: IBrandEntity[] = [
   { name: "LG", type: "Electronics", country: "South Korea" },
   { name: "Nike", type: "Sportswear and Footwear", country: "United States" },
   { name: "Sony", type: "Electronics", country: "Japan" },

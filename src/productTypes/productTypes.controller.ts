@@ -15,9 +15,9 @@ export class ProductsController {
         return await this.service.findProductTypes();
     }
     
-    @Put('id')
-    async updateProductTypeById(@Param("id") id:number, @Body() update: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity>{
-        return await this.service.updateProductTypeById(id, update);
+    @Put(':id')
+    async updateProductTypeById(@Param("id") id:string, @Body() updateProduct: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity>{
+        return await this.service.updateProductTypeById(id, updateProduct);
     }
 
     @Get(":id")
