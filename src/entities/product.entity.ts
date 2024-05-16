@@ -1,6 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, BaseEntity } from "typeorm";
 import { ProductTypeEntity } from "./productType.entity";
-import { IProductEntity , IProductTypeEntity } from "../../DataBases/interfaces.db";
+import { IProductEntity , IProductTypeEntity , IBrandEntity } from "../../DataBases/interfaces.db";
+import { BrandEntity } from "./brand.entity";
 
 
 @Entity('products')
@@ -12,11 +13,11 @@ export class ProductEntity extends BaseEntity implements IProductEntity{
     @Column({nullable: false})
     price: number;
     @Column({nullable: false})
-    brand: string;
-    @Column({nullable: false})
     size: string;
     @Column({nullable: false})
     color: string;
+    @ManyToOne(()=>BrandEntity,(brand)=>brand.products)
+    brand: IBrandEntity;
     @ManyToOne(()=>ProductTypeEntity,(productType)=>productType.products)
     productType: IProductTypeEntity;
 }

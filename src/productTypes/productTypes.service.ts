@@ -24,7 +24,6 @@ export class ProductTypesService {
     }
 
     async updateProductTypeById(id: string, updateProduct: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity> {
-        const queryUpdate = await this.repository.findOneBy({id: parseInt(id),});  
         await this.repository.update(id,updateProduct);
         const updateProductType = this.repository.findOneBy({id: parseInt(id)});
         return updateProductType;

@@ -1,8 +1,9 @@
 import { HttpException, Injectable, NotFoundException, HttpStatus } from '@nestjs/common';
 import { ProductEntity as ProductEntity } from 'src/entities/product.entity';
 import { DeepPartial } from 'typeorm';
-import { IProductEntity , IProductTypeEntity } from "../../DataBases/interfaces.db";
+import { IProductEntity } from "../../DataBases/interfaces.db";
 import { productTypes } from 'DataBases/productTypes.db';
+import { brands } from 'DataBases/brands.db';
 
 @Injectable()
 export class ProductsService {
@@ -24,7 +25,7 @@ export class ProductsService {
      * @throws {NotFoundException} Si no se encuentra ningún producto con el ID especificado.
      */
     async findProductById(id: number): Promise<IProductEntity> {
-        const product =await  this.repository.findOne({ where:{id}, relations:{productType:true}});
+        const product = await  this.repository.findOne({ where:{id}, relations:{productType:true, brand:true}});
         return product;
     }
 
@@ -58,7 +59,7 @@ export class ProductsService {
     async findProducts(){
         try {            
             return await this.repository.find({
-                relations: ['productType']
+                relations: ['productType', 'brand']
             });
         } catch (error) {
             throw new HttpException('Find all products error', 500)

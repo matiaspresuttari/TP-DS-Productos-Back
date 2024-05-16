@@ -2,7 +2,7 @@ import { Controller, Body, Post, Get, Put, Param, Query } from '@nestjs/common';
 import { ProductEntity as ProductEntity } from 'src/entities/product.entity';
 import { DeepPartial } from 'typeorm';
 import { ProductsService } from './products.service';
-import { IProductEntity , IProductTypeEntity } from "../../DataBases/interfaces.db";
+import { IProductEntity } from "../../DataBases/interfaces.db";
 
 
 @Controller('products')

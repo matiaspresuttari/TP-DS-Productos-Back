@@ -2,6 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany, BaseEntity } from "t
 import { ProductEntity } from "./product.entity";
 import { IProductTypeEntity } from "../../DataBases/interfaces.db";
 import { IProductEntity } from "../../DataBases/interfaces.db";
+
 @Entity('productTypes')
 export class ProductTypeEntity extends BaseEntity implements IProductTypeEntity{
     @PrimaryGeneratedColumn()
