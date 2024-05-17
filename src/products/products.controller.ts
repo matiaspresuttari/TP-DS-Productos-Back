@@ -17,8 +17,8 @@ export class ProductsController {
         return await this.service.findProductById(id);
     }
     @Put(':id')
-    async updateProductById(@Param('id') id: number, @Body() updateData: Partial<ProductEntity>): Promise<IProductEntity>{
-        return await this.service.updateProductById(id, updateData);
+    async updateProductById(@Param('id') id: number, @Body() bodyUpdateProduct: Partial<ProductEntity>): Promise<IProductEntity>{
+        return await this.service.updateProductById(id, bodyUpdateProduct);
     }
     @Get()
     async findProducts(): Promise<ProductEntity[]>{

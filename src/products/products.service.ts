@@ -40,21 +40,11 @@ export class ProductsService {
         return await this.repository.save(productActual);
     }
 
-    // async updateProductById(id: number, updateData: Partial<ProductEntity>): Promise<ProductEntity> {
-    //     // Buscar el producto existente
-    //     const product = await this.repository.findOneBy({ id });
-    //     if (!product) {
-    //         throw new NotFoundException(`Product with id ${id} not found`);
-    //     }
-
-    //     // Actualizar el producto con los nuevos datos
-    //     Object.assign(product, updateData);
-
-    //     // Guardar el producto actualizado
-    //     await this.repository.save(product);
-
-    //     return product;
-    // }
+    async updateProductTypeById(id: string, bodyUpdateProduct: DeepPartial<ProductEntity>): Promise<IProductEntity> {
+        await this.repository.update(id,bodyUpdateProduct);
+        const updateProduct = this.repository.findOneBy({id: parseInt(id)});
+        return updateProduct;
+    }
 
     async findProducts(){
         try {            

@@ -14,7 +14,6 @@ export class ProductTypesService {
             throw new HttpException('Create product type error', 500)
         }
     }
-
     async findProductTypes(){
         try {
             return await this.repository.find();
@@ -22,14 +21,11 @@ export class ProductTypesService {
             throw new HttpException('Find product type error', 500)
         }   
     }
-
-    async updateProductTypeById(id: string, updateProduct: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity> {
-        await this.repository.update(id,updateProduct);
+    async updateProductTypeById(id: string, bodyUpdateProductType: DeepPartial<ProductTypeEntity>): Promise<ProductTypeEntity> {
+        await this.repository.update(id,bodyUpdateProductType);
         const updateProductType = this.repository.findOneBy({id: parseInt(id)});
         return updateProductType;
     }
-
-
     async findProductTypesById(id: number): Promise<ProductTypeEntity> {
         const query = this.repository.createQueryBuilder('productType')
             .where('productType.id = :id', { id });
