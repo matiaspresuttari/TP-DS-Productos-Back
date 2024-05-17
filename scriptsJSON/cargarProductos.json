@@ -1,0 +1,205 @@
+
+[
+  {
+    "name": "Refrigerator",
+    "price": 223,
+    "productType": "1",
+    "brand": "1",
+    "color": "Black",
+    "size": "Medium"
+  },
+  {
+    "name": "T shirt",
+    "price": 271,
+    "productType": "4",
+    "brand": "2",
+    "color": "Yellow",
+    "size": "Small"
+  },
+  {
+    "name": "Computer",
+    "price": 76,
+    "productType": "2",
+    "brand": "3",
+    "color": "Black",
+    "size": "Medium"
+  },
+  {
+    "name": "Phone",
+    "price": 215,
+    "productType": "2",
+    "brand": "4",
+    "color": "Black",
+    "size": "Medium"
+  },
+  {
+    "name": "Pants",
+    "price": 154,
+    "productType": "4",
+    "brand": "5",
+    "color": "Green",
+    "size": "Small"
+  },
+  {
+    "name": "Watch",
+    "price": 88,
+    "productType": "3",
+    "brand": "2",
+    "color": "Red",
+    "size": "Large"
+  },
+  {
+    "name": "Refrigerator",
+    "price": 349,
+    "productType": "1",
+    "brand": "1",
+    "color": "White",
+    "size": "Small"
+  },
+  {
+    "name": "Bag",
+    "price": 195,
+    "productType": "3",
+    "brand": "6",
+    "color": "Yellow",
+    "size": "Large"
+  },
+  {
+    "name": "Pants",
+    "price": 482,
+    "productType": "4",
+    "brand": "6",
+    "color": "Red",
+    "size": "Small"
+  },
+  {
+    "name": "Table",
+    "price": 215,
+    "productType": "1",
+    "brand": "6",
+    "color": "Black",
+    "size": "Large"
+  },
+  {
+    "name": "Chair",
+    "price": 63,
+    "productType": "1",
+    "brand": "7",
+    "color": "White",
+    "size": "Large"
+  },
+  {
+    "name": "Shoes",
+    "price": 346,
+    "productType": "4",
+    "brand": "5",
+    "color": "Yellow",
+    "size": "Medium"
+  },
+  {
+    "name": "Pants",
+    "price": 192,
+    "productType": "4",
+    "brand": "8",
+    "color": "Black",
+    "size": "Small"
+  },
+  {
+    "name": "Chair",
+    "price": 293,
+    "productType": "1",
+    "brand": "8",
+    "color": "White",
+    "size": "Small"
+  },
+  {
+    "name": "Computer",
+    "price": 415,
+    "productType": "2",
+    "brand": "9",
+    "color": "Blue",
+    "size": "Large"
+  },
+  {
+    "name": "Refrigerator",
+    "price": 152,
+    "productType": "1",
+    "brand": "3",
+    "color": "White",
+    "size": "Small"
+  },
+  {
+    "name": "Shoes",
+    "price": 404,
+    "productType": "4",
+    "brand": "2",
+    "color": "Purple",
+    "size": "Large"
+  },
+  {
+    "name": "Phone",
+    "price": 237,
+    "productType": "2",
+    "brand": "7",
+    "color": "Blue",
+    "size": "Medium"
+  },
+  {
+    "name": "Refrigerator",
+    "price": 163,
+    "productType": "1",
+    "brand": "1",
+    "color": "Gray",
+    "size": "Medium"
+  },
+  {
+    "name": "Phone",
+    "price": 70,
+    "productType": "2",
+    "brand": "3",
+    "color": "Green",
+    "size": "Large"
+  },
+  {
+    "name": "Refrigerator",
+    "price": 224,
+    "productType": "1",
+    "brand": "1",
+    "color": "Yellow",
+    "size": "Large"
+  },
+  {
+    "name": "Watch",
+    "price": 121,
+    "productType": "3",
+    "brand": "5",
+    "color": "Blue",
+    "size": "Medium"
+  },  
+  {
+    "name": "Bag",
+    "price": 31,
+    "productType": "3",
+    "brand": "6",
+    "color": "Black",
+    "size": "Small"
+  },
+  {
+    "name": "Phone",
+    "price": 294,
+    "productType": "2",
+    "brand": "4",
+    "color": "Purple",
+    "size": "Medium"
+  },
+  {
+    "name": "T shirt",
+    "price": 99,
+    "productType": "4",
+    "brand": "6",
+    "color": "White",
+    "size": "Medium"
+  }
+]
+
+
