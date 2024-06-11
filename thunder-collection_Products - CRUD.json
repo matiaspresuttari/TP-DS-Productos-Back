@@ -1,0 +1,91 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Products - CRUD",
+    "collectionId": "f4d33a66-10fd-4eea-ad89-fcdaf4dc0b05",
+    "dateExported": "2024-06-11T01:13:10.641Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "83df90ac-b1be-4cba-9dc1-54e314c36579",
+            "colId": "f4d33a66-10fd-4eea-ad89-fcdaf4dc0b05",
+            "containerId": "",
+            "name": "Actualizar Producto",
+            "url": "localhost:3000/products/1",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-05-29T18:31:00.130Z",
+            "modified": "2024-05-29T18:31:00.130Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": " {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 223,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"Grey\",\r\n    \"size\": \"Medium\"\r\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "d865bbc2-d1a4-471d-9800-b85444934d51",
+            "colId": "f4d33a66-10fd-4eea-ad89-fcdaf4dc0b05",
+            "containerId": "",
+            "name": "Obtener Productos",
+            "url": "localhost:3000/products",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-29T18:31:16.988Z",
+            "modified": "2024-05-29T18:31:16.988Z",
+            "headers": []
+        },
+        {
+            "_id": "e945319b-66ae-483c-bab3-9a88b8f780fb",
+            "colId": "f4d33a66-10fd-4eea-ad89-fcdaf4dc0b05",
+            "containerId": "",
+            "name": "Cargar Productos",
+            "url": "localhost:3000/products",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-29T18:31:22.324Z",
+            "modified": "2024-05-29T18:31:22.324Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "\r\n[\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 223,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"Gray\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"T shirt\",\r\n    \"price\": 271,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"2\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Computer\",\r\n    \"price\": 76,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"3\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 215,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"4\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Pants\",\r\n    \"price\": 154,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"5\",\r\n    \"color\": \"Green\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Watch\",\r\n    \"price\": 88,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"2\",\r\n    \"color\": \"Red\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 349,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Bag\",\r\n    \"price\": 195,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Pants\",\r\n    \"price\": 482,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Red\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Table\",\r\n    \"price\": 215,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Chair\",\r\n    \"price\": 63,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"7\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Shoes\",\r\n    \"price\": 346,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"5\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Pants\",\r\n    \"price\": 192,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"8\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Chair\",\r\n    \"price\": 293,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"8\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Computer\",\r\n    \"price\": 415,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"9\",\r\n    \"color\": \"Blue\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 152,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"3\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Shoes\",\r\n    \"price\": 404,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"2\",\r\n    \"color\": \"Purple\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 237,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"7\",\r\n    \"color\": \"Blue\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 163,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"Gray\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 70,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"3\",\r\n    \"color\": \"Green\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 224,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Watch\",\r\n    \"price\": 121,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"5\",\r\n    \"color\": \"Blue\",\r\n    \"size\": \"Medium\"\r\n  },  \r\n  {\r\n    \"name\": \"Bag\",\r\n    \"price\": 31,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 294,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"4\",\r\n    \"color\": \"Purple\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"T shirt\",\r\n    \"price\": 99,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Medium\"\r\n  }\r\n]\r\n\r\n\r\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "03035304-4b35-4f02-ad48-2c0c70af2b7c",
+            "colId": "f4d33a66-10fd-4eea-ad89-fcdaf4dc0b05",
+            "containerId": "",
+            "name": "Cargar Productos",
+            "url": "localhost:3000/products",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-05-29T18:31:26.211Z",
+            "modified": "2024-05-29T18:31:26.211Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "\r\n[\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 223,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"Gray\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"T shirt\",\r\n    \"price\": 271,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"2\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Computer\",\r\n    \"price\": 76,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"3\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 215,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"4\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Pants\",\r\n    \"price\": 154,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"5\",\r\n    \"color\": \"Green\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Watch\",\r\n    \"price\": 88,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"2\",\r\n    \"color\": \"Red\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 349,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Bag\",\r\n    \"price\": 195,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Pants\",\r\n    \"price\": 482,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Red\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Table\",\r\n    \"price\": 215,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Chair\",\r\n    \"price\": 63,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"7\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Shoes\",\r\n    \"price\": 346,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"5\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Pants\",\r\n    \"price\": 192,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"8\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Chair\",\r\n    \"price\": 293,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"8\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Computer\",\r\n    \"price\": 415,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"9\",\r\n    \"color\": \"Blue\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 152,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"3\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Shoes\",\r\n    \"price\": 404,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"2\",\r\n    \"color\": \"Purple\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 237,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"7\",\r\n    \"color\": \"Blue\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 163,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"Gray\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 70,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"3\",\r\n    \"color\": \"Green\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Refrigerator\",\r\n    \"price\": 224,\r\n    \"productType\": \"1\",\r\n    \"brand\": \"1\",\r\n    \"color\": \"Yellow\",\r\n    \"size\": \"Large\"\r\n  },\r\n  {\r\n    \"name\": \"Watch\",\r\n    \"price\": 121,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"5\",\r\n    \"color\": \"Blue\",\r\n    \"size\": \"Medium\"\r\n  },  \r\n  {\r\n    \"name\": \"Bag\",\r\n    \"price\": 31,\r\n    \"productType\": \"3\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"Black\",\r\n    \"size\": \"Small\"\r\n  },\r\n  {\r\n    \"name\": \"Phone\",\r\n    \"price\": 294,\r\n    \"productType\": \"2\",\r\n    \"brand\": \"4\",\r\n    \"color\": \"Purple\",\r\n    \"size\": \"Medium\"\r\n  },\r\n  {\r\n    \"name\": \"T shirt\",\r\n    \"price\": 99,\r\n    \"productType\": \"4\",\r\n    \"brand\": \"6\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Medium\"\r\n  }\r\n]\r\n\r\n\r\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "68e27800-1b3a-4de4-97e6-ce2705a8d079",
+            "colId": "f4d33a66-10fd-4eea-ad89-fcdaf4dc0b05",
+            "containerId": "",
+            "name": "Cargar Brands",
+            "url": "localhost:3000/brands",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-29T18:31:31.392Z",
+            "modified": "2024-05-29T18:31:31.392Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "[\r\n    { \"name\": \"LG\", \"type\": \"Electronics\", \"country\": \"South Korea\" },\r\n    { \"name\": \"Nike\", \"type\": \"Sportswear and Footwear\", \"country\": \"United States\" },\r\n    { \"name\": \"Sony\", \"type\": \"Electronics\", \"country\": \"Japan\" },\r\n    { \"name\": \"Samsung\", \"type\": \"Electronics\", \"country\": \"South Korea\" },\r\n    { \"name\": \"Adidas\", \"type\": \"Sportswear and Footwear\", \"country\": \"Germany\" },\r\n    { \"name\": \"Zara\", \"type\": \"Clothing\", \"country\": \"Spain\" },\r\n    { \"name\": \"Xiaomi\", \"type\": \"Electronics\", \"country\": \"China\" },\r\n    { \"name\": \"H&M\", \"type\": \"Clothing\", \"country\": \"Sweden\" },\r\n    { \"name\": \"HP\", \"type\": \"Information Technology\", \"country\": \"United States\" }\r\n]",
+                "form": []
+            }
+        }
+    ],
+    "ref": "3mRS7N8ZctRozEYKnt4TMaCI_guHlSiTYCNIQC0fjUg2ESTIGconLCHiJFhvYwWHoKxxT-mT2yiwXWSiH6wYKQ"
+}

@@ -1,4 +1,4 @@
-import {  Entity, Column, PrimaryGeneratedColumn, OneToMany, BaseEntity} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, BaseEntity} from 'typeorm';
 import { ProductEntity } from './product.entity';
 import { IBrandEntity } from '../../DataBases/interfaces.db';
 import { IProductEntity } from '../../DataBases/interfaces.db';
