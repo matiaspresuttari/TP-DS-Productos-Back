@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Request } from 'express';
 
 export class AuthGuard implements CanActivate {
-    url= 'http://localhost:3000/can-do/';
+    url= 'http://localhost:3000/users/can-do';
     constructor(private permissionCode:String) {}
 
     async canActivate(context: ExecutionContext): Promise<boolean> {
