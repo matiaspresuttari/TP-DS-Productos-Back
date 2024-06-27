@@ -55,4 +55,12 @@ export class ProductsService {
             throw new HttpException('Find all products error', 500)
         }   
     }
+
+    async deleteProductById(id: number): Promise<void> {
+        try {
+            await this.repository.delete(id);
+        } catch (error) {
+            throw new HttpException('Delete product error', 500)
+        }
+    }
 }

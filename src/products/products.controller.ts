@@ -1,4 +1,4 @@
-import { Controller, Body, Post, Get, Put, Param, Query, UseGuards } from '@nestjs/common';
+import { Controller, Body, Post, Get, Put, Param, Query, UseGuards, Delete } from '@nestjs/common';
 import { ProductEntity as ProductEntity } from 'src/entities/product.entity';
 import { DeepPartial } from 'typeorm';
 import { ProductsService } from './products.service';
@@ -25,5 +25,9 @@ export class ProductsController {
     @Get()
     async findProducts(): Promise<ProductEntity[]>{
         return await this.service.findProducts();
+    }
+    @Delete(':id')
+    async deleteProductById(@Param('id') id: number): Promise<void>{
+        return await this.service.deleteProductById(id);
     }
 }
