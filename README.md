@@ -21,53 +21,20 @@
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  
+# products-api
 
-## Description
+Este repositorio forma parte del proyecto de desarrollo de software para la cátedra de Desarrollo de Software 2024 de la UTN-FRVM.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Descripción
+products-api es el backend para la gestión de productos del proyecto. Está desarrollado con NestJS y utiliza TypeORM para la gestión de la base de datos SQLite.
 
-## Installation
+## Funcionalidades principales
+- Gestión de productos mediante endpoints RESTful.
+- Utilización de JWT para autenticación.
+- Integración con TypeORM para la persistencia de datos.
 
-```bash
-$ npm install
-```
+## Instalación y configuración
+1. Clona el repositorio: `git clone https://github.com/matiaspresuttari/TP-DS-Productos-Back.git`
+2. Instala las dependencias: `npm install`
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
