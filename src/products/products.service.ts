@@ -5,6 +5,11 @@ import { IProductEntity } from "../../DataBases/interfaces.db";
 import { productTypes } from 'DataBases/productTypes.db';
 import { brands } from 'DataBases/brands.db';
 
+interface ProductFilters {
+    type?: string;
+    maxPrice?: number;
+    minPrice?: number;
+  }
 @Injectable()
 export class ProductsService {
     repository = ProductEntity;
@@ -46,16 +51,26 @@ export class ProductsService {
         return updateProduct;
     }
 
-    async findProducts(){
-        try {            
-            return await this.repository.find({
-                relations: ['productType', 'brand']
-            });
-        } catch (error) {
-            throw new HttpException('Find all products error', 500)
-        }   
-    }
+    
+    async findProducts(filters: any): Promise<ProductEntity[]> {
+        const query = this.repository.createQueryBuilder('product')
+        .leftJoinAndSelect('product.productType', 'productType')
+        .leftJoinAndSelect('product.brand', 'brand');
 
+        if (filters.type) {
+        query.andWhere('productType.name = :type', { type: filters.type });
+        }
+        if (filters.brand) {
+            query.andWhere('brand.name = :brand', { brand: filters.brand });
+        }
+        if (filters.maxPrice) {
+        query.andWhere('product.price <= :maxPrice', { maxPrice: filters.maxPrice });
+        }
+        if (filters.minPrice) {
+        query.andWhere('product.price >= :minPrice', { minPrice: filters.minPrice });
+        }
+        return await query.getMany();
+    }
     async deleteProductById(id: number): Promise<void> {
         try {
             await this.repository.delete(id);

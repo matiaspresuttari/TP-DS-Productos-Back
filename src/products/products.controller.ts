@@ -5,7 +5,6 @@ import { ProductsService } from './products.service';
 import { IProductEntity } from "../../DataBases/interfaces.db";
 import { AuthGuard } from 'src/middlewares/auth.middleware';
 
-
 @Controller('products')
 export class ProductsController {
     constructor(private service: ProductsService) {}
@@ -23,11 +22,12 @@ export class ProductsController {
     }
     @UseGuards(new AuthGuard('list-products'))
     @Get()
-    async findProducts(): Promise<ProductEntity[]>{
-        return await this.service.findProducts();
+    async findProducts(@Query() filters: any): Promise<ProductEntity[]>{
+        return await this.service.findProducts(filters);
     }
     @Delete(':id')
     async deleteProductById(@Param('id') id: number): Promise<void>{
         return await this.service.deleteProductById(id);
     }
+    
 }

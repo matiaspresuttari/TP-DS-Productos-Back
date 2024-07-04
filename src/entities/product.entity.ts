@@ -16,8 +16,8 @@ export class ProductEntity extends BaseEntity implements IProductEntity{
     size: string;
     @Column({nullable: false})
     color: string;
-    @ManyToOne(()=>BrandEntity,(brand)=>brand.products)
+    @ManyToOne(()=>BrandEntity,(brand)=>brand.products,{ eager: true })
     brand: IBrandEntity;
-    @ManyToOne(()=>ProductTypeEntity,(productType)=>productType.products)
+    @ManyToOne(()=>ProductTypeEntity,(productType)=>productType.products,{ eager: true })
     productType: IProductTypeEntity;
 }
